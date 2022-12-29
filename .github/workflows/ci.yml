@@ -1,0 +1,17 @@
+name: First workflow
+
+# Especifica el disparador para este flujo de trabajo.
+on: [push]
+
+#jobs - Agrupa todos los trabajos que se ejecutan en el flujo de trabajo
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # La palabra clave uses especifica que este paso se ejecutará la v1 de la acción: actions/checkout
+      - uses: actions/checkout@v1
+
+      - name: Hello Codelies!
+        # La palabra clave run le dice al trabajo que ejecute un comando en el runner.
+        run: echo "Hello!!!! from ${{ github.workflow }} triggered by the ${{ github.event_name }} done by ${{ github.actor }}"
