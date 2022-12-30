@@ -15,3 +15,10 @@ jobs:
       - name: Hello Codelies!
         # La palabra clave run le dice al trabajo que ejecute un comando en el runner.
         run: echo "Hello!!!! from ${{ github.workflow }} triggered by the ${{ github.event_name }} done by ${{ github.actor }}"
+        
+      - name: 😊 More and more
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: |
+          echo "Job Context: $JOB_CONTEXT"
+          echo "Done!"
