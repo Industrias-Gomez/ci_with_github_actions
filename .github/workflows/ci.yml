@@ -10,7 +10,7 @@ jobs:
 
     steps:
       # La palabra clave uses especifica que este paso se ejecutará la v1 de la acción: actions/checkout
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Hello Codelies!
         # La palabra clave run le dice al trabajo que ejecute un comando en el runner.
